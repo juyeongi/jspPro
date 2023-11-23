@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/jspPro/images/SiSt.ico">
+<link rel="stylesheet" href="/jspPro/resources/cdn-main/example.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="/jspPro/resources/cdn-main/example.js"></script>
+<style>
+	.material-symbols-outlined{
+		vertical-align: text-bottom;
+	}
+</style>
+</head>
+<body>
+<header class="sticky">
+	<h1 class="main">
+		<a href="#">home</a>
+	</h1>
+	<ul>
+		<li> <a href="#">로그인</a> </li>
+		<li> <a href="#">회원가입</a> </li>
+	</ul>	
+</header>
+<h3>
+	<span class="material-symbols-outlined">view_list</span>
+	jsp days00
+</h3>
+<div>
+	<xmp class="code">
+		
+	</xmp>
+</div>
+<script>
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        function init() {
+            for(let i=0; i<30; i++) {
+                let div = document.createElement("div");
+                div.style.position = 'absolute'
+                div.style.left = Math.floor(Math.random()*width) + "px";
+                div.style.top = Math.floor(Math.random()*height) + "px";
+                div.innerHTML = "집가고싶다";
+                document.getElementsByTagName("body")[0].appendChild(div);
+            }
+           
+        }
+
+        function moveSnow() {
+            let div = document.getElementsByTagName("div");
+            for(let i=0; i<div.length; i++) {
+                div[i].style.top = (parseInt(div[i].style.top) + 20) + "px";
+                if(parseInt(div[i].style.top) > height) {
+                    div[i].style.top = "0px";
+                }
+            }
+        }
+
+        init();
+        setInterval(moveSnow, 500);
+    </script> 
+</body>
+</html>
